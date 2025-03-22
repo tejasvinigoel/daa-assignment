@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique Analysis | DAA Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .dataset-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .dataset-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .metrics-table th, 
+        .metrics-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .metrics-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .metrics-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: var(--secondary);
+        }
+
+        .observations {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .observation-list {
+            list-style: none;
+        }
+
+        .observation-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .observation-list li::before {
+            content: "▹";
+            color: var(--secondary);
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .dataset-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Clique Enumeration Analysis</h1>
+            <p>Advanced Analysis of Graph Clique Algorithms</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Email-Enron Dataset -->
+        <section class="dataset-card">
+            <h2>📧 email-Enron Dataset</h2>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>ELS Algorithm</th>
+                        <th>Algorithm 2</th>
+                        <th>Algorithm 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Largest Clique Size</td>
+                        <td>20</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Total Maximal Cliques</td>
+                        <td>226,859</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Execution Time</td>
+                        <td>143.801s</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-container">
+                <h3>Clique Size Distribution</h3>
+                <!-- Add Chart.js chart here -->
+            </div>
+        </section>
+
+        <!-- Wiki-Vote Dataset -->
+        <section class="dataset-card">
+            <h2>🗳️ wiki-Vote Dataset</h2>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>ELS Algorithm</th>
+                        <th>Algorithm 2</th>
+                        <th>Algorithm 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Largest Clique Size</td>
+                        <td>17</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Total Maximal Cliques</td>
+                        <td>459,002</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Execution Time</td>
+                        <td>56.756s</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-container">
+                <h3>Clique Size Distribution</h3>
+                <!-- Add Chart.js chart here -->
+            </div>
+        </section>
+
+        <!-- Observations -->
+        <section class="observations">
+            <h2>🔍 Key Observations</h2>
+            <ul class="observation-list">
+                <li>ELS shows superior performance in dense graphs</li>
+                <li>Notable runtime variations between datasets</li>
+                <li>Clique size distribution follows power-law pattern</li>
+            </ul>
+        </section>
+
+        <!-- Team Section -->
+        <section>
+            <section>
+                <h2>👥 Team Members</h2>
+                <div class="team-section">
+                    <div class="team-member">
+                        <h3>Snigdha Barui</h3>
+                        <ul>
+                            <li>Implementation of ELS algorithm</li>
+                            <li>Documentation and analysis</li>
+                        </ul>
+                    </div>
+                    <div class="team-member">
+                        <h3>Tanisha Agarwal</h3>
+                        <ul>
+                            <li>Implementation of ELS algorithm</li>
+                            <li>Documentation and analysis</li>
+                        </ul>
+                    </div>
+                    <div class="team-member">
+                        <h3>Thrisha Reddy</h3>
+                        <ul>
+                            <li>Implementation of Chiba algorithm</li>
+                            <li>Implementation of Tomita algorithm</li>
+                        </ul>
+                    </div>
+                    <div class="team-member">
+                        <h3>Tejasvini Goel</h3>
+                        <ul>
+                            <li>Implementation of Chiba algorithm</li>
+                            <li>Implementation of Tomita algorithm</li>
+                        </ul>
+                    </div>
+                    <div class="team-member">
+                        <h3>Vaishnavi B</h3>
+                        <ul>
+                            <li>Implementation of Tomita algorithm</li>
+                            <li>Documentation and analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+
+        <!-- GitHub Link -->
+        <section style="text-align: center; margin: 3rem 0;">
+            <a href="https://github.com/tejasvinigoel/daa-assignment" class="github-link">
+                <i class="fab fa-github"></i>
+                View Source Code
+            </a>
+        </section>
+    </main>
+
+    <script>
+        // Add interactive features here
+        document.querySelectorAll('.metrics-table tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.backgroundColor = '#f8f9fa';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
