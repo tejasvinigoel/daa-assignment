@@ -6,6 +6,8 @@
     <title>Clique Analysis | DAA Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         :root {
             --primary: #2c3e50;
@@ -193,7 +195,9 @@
             
             <div class="chart-container">
                 <h3>Clique Size Distribution</h3>
-                <!-- Add Chart.js chart here -->
+                <canvas id="enronChart"></canvas>
+
+
             </div>
         </section>
 
@@ -233,7 +237,7 @@
             
             <div class="chart-container">
                 <h3>Clique Size Distribution</h3>
-                <!-- Add Chart.js chart here -->
+                <canvas id="wikiChart"></canvas>
             </div>
         </section>
 
@@ -247,7 +251,7 @@
             </ul>
         </section>
 
-        <!-- Team Section -->
+        <!-- Team -->
         <section>
             <section>
                 <h2>👥 Team Members</h2>
@@ -277,7 +281,7 @@
                         <h3>Tejasvini Goel</h3>
                         <ul>
                             <li>Implementation of Chiba algorithm</li>
-                            <li>Implementation of Tomita algorithm</li>
+                            <li>Website Development</li>
                         </ul>
                     </div>
                     <div class="team-member">
@@ -301,7 +305,6 @@
     </main>
 
     <script>
-        // Add interactive features here
         document.querySelectorAll('.metrics-table tr').forEach(row => {
             row.addEventListener('mouseenter', () => {
                 row.style.backgroundColor = '#f8f9fa';
@@ -311,5 +314,80 @@
             });
         });
     </script>
+
+    <script>
+        const enronData = {
+            labels: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+            datasets: [{
+                label: 'Clique Size Distribution (email-Enron)',
+                data: [14070, 7077, 13319, 18143, 22715, 25896, 24766, 22884, 21393, 17833, 
+                    15181, 11487, 7417, 3157, 1178, 286, 41, 10, 6],
+                backgroundColor: 'rgba(52, 152, 219, 0.6)',  // Blue color
+                borderColor: 'rgba(52, 152, 219, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const wikiData = {
+            labels: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+            datasets: [{
+                label: 'Clique Size Distribution (wiki-Vote)',
+                data: [8655, 13718, 27292, 48416, 68872, 83266, 76732, 54456, 35470, 
+                    21736, 11640, 5449, 2329, 740, 208, 23],
+                backgroundColor: 'rgba(231, 76, 60, 0.6)',  // Red color
+                borderColor: 'rgba(231, 76, 60, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const enronConfig = {
+            type: 'bar',
+            data: enronData,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Clique Size'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Frequency'
+                        }
+                    }
+                }
+            }
+        };
+
+        const wikiConfig = {
+            type: 'bar',
+            data: wikiData,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Clique Size'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Frequency'
+                        }
+                    }
+                }
+            }
+        };
+
+        // Render charts
+        new Chart(document.getElementById('enronChart'), enronConfig);
+        new Chart(document.getElementById('wikiChart'), wikiConfig);
+    </script>
+
 </body>
 </html>
