@@ -22,8 +22,11 @@ https://drive.google.com/drive/folders/1A-_tZQI6Uqf_COlaW6JMCRppisf5UVz1?usp=sha
 - Ensure the datasets are in the same directory as the source code.
 - Once all files are downloaded in the local system, on terminal:
 
-Compilation:
-bash
+## ⚙️ Compilation Instructions
+
+Use the following commands to compile the algorithms:
+
+```bash
 # Compile ELS algorithm
 g++ els.cpp -o els.exe
 
@@ -33,17 +36,17 @@ g++ tomita.cpp -o tomita.exe
 # Compile Chiba-Nishizeki algorithm 
 g++ chiba.cpp -o chiba.exe
 
-To run:
-bash
 
-#  Run the executable
-# run ELS algorithm
+# Run ELS algorithm
 ./els.exe
-# run Tomita algorithm
-./tomita.exe
-# run Chiba-Nishizeki algorithm 
-./chiba.exe
 
+# Run Tomita algorithm
+./tomita.exe
+
+# Run Chiba-Nishizeki algorithm 
+./chiba.exe
+ 
+```
 
 ### This assignment has analyzed and compared three prominent algorithms for maximal clique enumeration: Bron–Kerbosch with pivot, Bron–Kerbosch with degeneracy ordering, and the arboricity-based method. Our findings reveal that each algorithm has its strengths for different graph types:
 
