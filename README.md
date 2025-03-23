@@ -9,4 +9,8 @@ https://cozy-sable-bedbeb.netlify.app/
 
 ## Edited Datasets link:
 https://drive.google.com/drive/folders/1A-_tZQI6Uqf_COlaW6JMCRppisf5UVz1?usp=sharing
----
+
+## Code Execution:
+- Ensure your datasets are in the same directory as the source code.
+- Before compilation, you need to modify the input file path in the source code to choose which dataset you want to run your algorithm on.
+- 
