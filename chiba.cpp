@@ -227,8 +227,9 @@ void CLIQUE(const Graph &graph, const vector<int> &original_order)
 
 int main()
 {
+    clock_t start_time = clock(); // Start timer
+
     ifstream inputFile("input.txt");
-    // ... (rest of main remains the same until after CLIQUE call)
 
     if (!inputFile.is_open())
     {
@@ -293,10 +294,9 @@ int main()
         }
     }
 
-    // Removed processing print: cout << "Processing cliques...\n";
     CLIQUE(sorted_graph, vertices);
 
-    // After CLIQUE call, update distribution from unique_cliques
+    // Update distribution from unique_cliques
     clique_size_distribution.clear();
     for (const auto &clique : unique_cliques)
     {
@@ -313,6 +313,11 @@ int main()
     {
         cout << "   Size " << pair.first << ": " << pair.second << "\n";
     }
+
+    clock_t end_time = clock(); // End timer
+    double time_taken = double(end_time - start_time) / CLOCKS_PER_SEC;
+    cout << fixed << setprecision(4);
+    cout << "\nRuntime: " << time_taken << " seconds" << endl;
 
     return 0;
 }
