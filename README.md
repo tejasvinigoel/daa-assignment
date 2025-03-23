@@ -22,19 +22,19 @@ https://drive.google.com/drive/folders/1A-_tZQI6Uqf_COlaW6JMCRppisf5UVz1?usp=sha
 - Ensure the datasets are in the same directory as the source code.
 - Once all files are downloaded in the local system, on terminal:
 
-## ⚙️ Compilation Instructions
+## ⚙️ Compilation Instructions(on windows)
 
 Use the following commands to compile the algorithms:
 
 ```bash
 # Compile ELS algorithm
-g++ els.cpp -o els.exe
+g++ -03 -o els.cpp 
 
 # Compile Tomita algorithm
-g++ tomita.cpp -o tomita.exe
+g++ -03 -o tomita.cpp 
 
 # Compile Chiba-Nishizeki algorithm 
-g++ chiba.cpp -o chiba.exe
+g++ -03 -o chiba.cpp
 
 
 # Run ELS algorithm
