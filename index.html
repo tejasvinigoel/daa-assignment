@@ -157,10 +157,39 @@
             <p>Advanced Analysis of Graph Clique Algorithms</p>
         </div>
     </header>
-
-    <main class="container">
-
-        <!-- execution times histogram-->
+    <section class="dataset-card">
+        <h2>⏱️ Execution Times Comparison</h2>
+        <table class="metrics-table">
+            <thead>
+                <tr>
+                    <th>Dataset</th>
+                    <th>ELS Algorithm</th>
+                    <th>Tomita Algorithm</th>
+                    <th>Chiba-Arboricity Algorithm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>email-Enron</td>
+                    <td>143.801s</td>
+                    <td>62.814s</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>wiki-Vote</td>
+                    <td>56.756s</td>
+                    <td>42.051s</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>as-Skitter</td>
+                    <td>11253.537s</td>
+                    <td>14001.119s</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+    
         <div class="chart-container">
             <h3>Execution Time (email-Enron Dataset)</h3>
             <canvas id="emailEnronChart"></canvas>
@@ -175,6 +204,8 @@
             <h3>Execution Time (as-Skitter Dataset)</h3>
             <canvas id="asSkitterChart"></canvas>
         </div>
+    </section>
+    
         
 
         <!-- Email-Enron Dataset -->
