@@ -47,7 +47,8 @@ g++ chiba.cpp -o chiba.exe
 ./chiba.exe
  
 ```
-
+---
+## Observations:
 ### This assignment has analyzed and compared three prominent algorithms for maximal clique enumeration: Bron–Kerbosch with pivot, Bron–Kerbosch with degeneracy ordering, and the arboricity-based method. Our findings reveal that each algorithm has its strengths for different graph types:
 
 - Bron–Kerbosch with pivot serves as a reliable baseline for small to medium-sized graphs.
