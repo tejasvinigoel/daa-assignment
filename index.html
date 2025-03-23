@@ -159,6 +159,24 @@
     </header>
 
     <main class="container">
+
+        <!-- execution times histogram-->
+        <div class="chart-container">
+            <h3>Execution Time (email-Enron Dataset)</h3>
+            <canvas id="emailEnronChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h3>Execution Time (wiki-Vote Dataset)</h3>
+            <canvas id="wikiVoteChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h3>Execution Time (as-Skitter Dataset)</h3>
+            <canvas id="asSkitterChart"></canvas>
+        </div>
+        
+
         <!-- Email-Enron Dataset -->
         <section class="dataset-card">
             <h2>📧 email-Enron Dataset</h2>
@@ -356,6 +374,69 @@
         });
     </script>
 
+    
+    <script>
+        const datasets = ['email-Enron', 'wiki-Vote', 'as-Skitter'];
+        const algorithms = ['ELS', 'Tomita', 'Chiba-Arboricity'];
+
+        // Execution time data
+        const executionTimes = {
+            'email-Enron': [143.801, 62.814, 0],
+            'wiki-Vote': [56.756, 42.051, 0],
+            'as-Skitter': [11253.537, 14001.119, 0]
+        };
+
+        const colors = [
+            'rgba(52, 152, 219, 0.6)',  // ELS
+            'rgba(231, 76, 60, 0.6)',   // Tomita
+            'rgba(46, 204, 113, 0.6)'   // Chiba-Arboricity
+        ];
+
+        const borderColors = [
+            'rgba(52, 152, 219, 1)',
+            'rgba(231, 76, 60, 1)',
+            'rgba(46, 204, 113, 1)'
+        ];
+
+        function createChart(ctx, title, datasetName) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: algorithms,
+                    datasets: [{
+                        label: title,
+                        data: executionTimes[datasetName],
+                        backgroundColor: colors,
+                        borderColor: borderColors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: title,
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Execution Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart(document.getElementById('emailEnronChart'), 'Execution Time: email-Enron', 'email-Enron');
+        createChart(document.getElementById('wikiVoteChart'), 'Execution Time: wiki-Vote', 'wiki-Vote');
+        createChart(document.getElementById('asSkitterChart'), 'Execution Time: as-Skitter', 'as-Skitter');
+    </script>
     <script>
         const enronData = {
             labels: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
