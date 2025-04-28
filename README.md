@@ -16,7 +16,7 @@ https://docs.google.com/document/d/1wVR-fJXoiuKwuarOJ8yLDRcS12AT7vNz_sp4gcVc0ss/
 https://tejasvinigoel.github.io/daa-assignment2/
 
 ## Edited Datasets link:
-
+https://drive.google.com/drive/folders/12K8Z_Hlq1qxXqcx4fFfJFPL4AxPLvz-2
 
 ## Code Execution:
 - Ensure the datasets are in the same directory as the source code.
@@ -42,15 +42,23 @@ g++ algo_4.cpp -o algo_4
 ./algo_4 input.txt
  
 ```
+
+## Algorithm Suitability
+
+| Graph Type | Recommended Algorithm |
+|------------|------------------------|
+| Small graphs (few thousand vertices) | **Algorithm 1 (Exact)** |
+| Medium to large dense graphs | **Algorithm 4 (CoreExact)** |
+| Very large graphs (millions of vertices, social networks, biological networks) | **Algorithm 4 (CoreExact)** |
+| High hhh-clique density subgraph search (e.g., triangle-dense, 4-clique-dense) | **Algorithm 4 (CoreExact)** |
+
 ---
 ## Observations:
-### This assignment has analyzed and compared three prominent algorithms for maximal clique enumeration: Bron–Kerbosch with pivot, Bron–Kerbosch with degeneracy ordering, and the arboricity-based method. Our findings reveal that each algorithm has its strengths for different graph types:
+We compared Algorithm 1 (Exact) and Algorithm 4 (CoreExact) for Densest Subgraph Discovery (DSD).
 
-- Bron–Kerbosch with pivot serves as a reliable baseline for small to medium-sized graphs.
-- Degeneracy ordering excels on large sparse graphs, particularly social and web networks, offering near-optimal performance.
-- The arboricity-based method is most efficient for massive sparse and planar graphs, such as road networks.
+Algorithm 1 uses binary search with flow network constructions to find exact solutions but is computationally expensive for large or dense graphs. CoreExact improves on this by applying (k, Ψ)-core decomposition to reduce the search space, significantly speeding up computations while maintaining exactness. It achieves up to four orders of magnitude faster performance than Algorithm 1.
 
-All three algorithms produced consistent results, validating their correctness. The arboricity-based method demonstrated superior memory efficiency, using 40% less than the Bron–Kerbosch variants.
+Thus, CoreExact is recommended for large-scale, real-world networks, while Algorithm 1 remains suitable for small or toy datasets. Overall, CoreExact bridges the gap between theoretical accuracy and practical scalability.
 
 
   
