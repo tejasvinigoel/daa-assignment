@@ -10,13 +10,13 @@ This repository contains implementations of two algorithms for clique densest su
 | B.Vaishnavi | 2022A7PS1357H | Analysis of Algorithms & Documentation and analysis |
 
 ## Report link:
-https://docs.google.com/document/d/1DX92KSZ35noW9xD8V28d1JUWK_9UgQhGyu0-wapfgn4/edit?usp=sharing
+https://docs.google.com/document/d/1wVR-fJXoiuKwuarOJ8yLDRcS12AT7vNz_sp4gcVc0ss/edit?tab=t.0
 
 ## Website link:
-https://cozy-sable-bedbeb.netlify.app/
+https://tejasvinigoel.github.io/daa-assignment2/
 
 ## Edited Datasets link:
-https://drive.google.com/drive/folders/1A-_tZQI6Uqf_COlaW6JMCRppisf5UVz1?usp=sharing
+
 
 ## Code Execution:
 - Ensure the datasets are in the same directory as the source code.
@@ -27,24 +27,19 @@ https://drive.google.com/drive/folders/1A-_tZQI6Uqf_COlaW6JMCRppisf5UVz1?usp=sha
 Use the following commands to compile the algorithms:
 
 ```bash
-# Compile ELS algorithm
-g++ -03 -o els.cpp 
+# Compile algo_1 algorithm
+g++ algo_1.cpp -o algo_1
 
-# Compile Tomita algorithm
-g++ -03 -o tomita.cpp 
-
-# Compile Chiba-Nishizeki algorithm 
-g++ -03 -o chiba.cpp
+# Compile algo_4 algorithm
+g++ algo_4.cpp -o algo_4
 
 
-# Run ELS algorithm
-./els.exe
 
-# Run Tomita algorithm
-./tomita.exe
+# Run algorithm 1
+./algo_1 input.txt
 
-# Run Chiba-Nishizeki algorithm 
-./chiba.exe
+# Run algorithm 4
+./algo_4 input.txt
  
 ```
 ---
